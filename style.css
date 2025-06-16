@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
+body.dark {
+  background-color: #2f1963;
+  color: #ff4b4b;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding: 40px 20px;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Cartões */
+.card {
+  width: 280px;
+  height: 200px;
+  perspective: 1000px;
+  cursor: pointer;
+  animation: fadeIn 0.5s ease;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-inner {
+
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+  background: linear-gradient(to bottom right, #ccbbfb, #c190f9);
+  color: #4d0da1;
+}
+
+.card-back {
+  background: linear-gradient(to bottom right, #d2a5d6, #bb66bb);
+  color: #591b5e;
+  transform: rotateY(180deg);
+}
+
+body.dark .card-front {
+  background: #bf59c9;
+  color: #ffffff3d;
+}
+
+body.dark .card-back {
+  background: #7d2e72;
+  color: #fff;
+}
+
+footer {
+  padding: 20px;
+  background-color: #d8aeff;
+  text-align: center;
+  color: #940099;
+  font-weight: bold;
+}
+
+header {
+  text-align: center;
+  padding: 15px;
+}
+
+#toggle-theme {
+  background-color: #7f64f6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.cabecalho {
+background-color: #a259ff;
+color: white;
+padding: 1.5rem;
+text-align: center;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cabecalho h1 {
+margin: 0;
+font-size: 2rem;
+letter-spacing: 1px;
+}
